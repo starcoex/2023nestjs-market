@@ -17,10 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        {/* <div className="w-full mx-auto max-w-lg">
+        {/* {children} */}
+        <div className="w-full mx-auto max-w-lg">
           <HeaderLayout> {children} </HeaderLayout>
-        </div> */}
+        </div>
       </body>
     </html>
   );
