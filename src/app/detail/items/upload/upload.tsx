@@ -2,11 +2,11 @@ import React from "react";
 
 export default function Upload() {
   return (
-    <div className="px-4 py-12">
+    <div className="px-4 py-12 space-y-5">
       <div>
         <label
           htmlFor="file"
-          className="w-full cursor-pointer py-16 flex items-center justify-center border-2 border-dashed py-4 border-gray-300 hover:border-orange-500  hover:text-orange-500 "
+          className="w-full cursor-pointer flex items-center justify-center border-2 border-dashed py-4 border-gray-300 hover:border-orange-500  hover:text-orange-500 "
         >
           <svg
             className="w-6 h-6 text-gray-800 hover:text-orange-500  dark:text-white"
@@ -26,6 +26,23 @@ export default function Upload() {
           <input id="file" type="file" className="hidden" />
         </label>
       </div>
+      <div>
+        <label
+          className="mb-1 block text-sm font-medium text-gray-700"
+          htmlFor="name"
+        >
+          Name
+        </label>
+        <div className="rounded-md relative flex  items-center shadow-sm">
+          <input
+            id="name"
+            type="email"
+            className="appearance-none w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500"
+            required
+          />
+        </div>
+      </div>
+      <div></div>
       <div className="my-5">
         <label
           htmlFor="price"
