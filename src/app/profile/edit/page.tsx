@@ -1,12 +1,12 @@
 import { NextPage } from "next";
-import Detail from "./detail";
+import Edit from "./edit";
 
 interface Props {}
 
 const Page: NextPage<Props> = ({}) => {
   return (
     <>
-      <Detail />
+      <Edit />
     </>
   );
 };

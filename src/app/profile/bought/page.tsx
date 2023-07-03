@@ -1,13 +1,12 @@
 import { NextPage } from "next";
-import Profile from "./profile";
-import Bought from "./bought/bought";
+import Bought from "./bought";
 
 interface Props {}
 
 const Page: NextPage<Props> = ({}) => {
   return (
     <>
-      <Profile />
+      <Bought />
     </>
   );
 };

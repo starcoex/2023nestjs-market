@@ -1,101 +1,106 @@
-import Image from "next/image";
-
+import React from "react";
+import Item from "@/componets/item";
+import FloatingButton from "@/componets/floating-button";
+import HeaderLayout from "./headerLayout";
 export default function Home() {
   return (
-    <main className="bg-slate-400 py-20 px-10 max-w-md flex flex-col space-y-8 shadow-xl m-auto">
-      <div className="bg-white p-10 rounded-xl">
-        <div className="font-medium text-xl">Select Item</div>
-        <div className="flex flex-row justify-between my-2">
-          <span className="text-gray-400 text-sm">Crey Chair</span>
-          <span className="font-semibold">$180</span>
-        </div>
-        <div className="flex flex-row justify-between ">
-          <span className="text-gray-400 text-sm">Tooly table</span>
-          <span className="font-semibold">$800</span>
-        </div>
-        <div className="pt-2 border-t-2 border-dashed"></div>
-        <div className="flex justify-between">
-          <h1>Total</h1>
-          <span className="font-semibold">$970</span>
-        </div>
-        <button
-          type="button"
-          className="mt-5 bg-blue-500 py-2 px-8 rounded-2xl  text-white  block w-full text-center"
-        >
-          Checkout
-        </button>
-      </div>
-
-      <div className="bg-white rounded-xl overflow-hidden">
-        <div className="flex justify-between items-center  bg-blue-500 p-8">
-          <div className="font-medium text-white text-2xl">Profile</div>
+    <HeaderLayout title="Home" hasTabBar>
+      <div className="flex flex-col space-y-5">
+        {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
+          <Item
+            id={i}
+            key={i}
+            title="iPhone 14"
+            price={99}
+            comments={1}
+            hearts={1}
+          />
+          //   className="flex justify-between border-b pb-4 cursor-pointer "
+          // >
+          //   <div className="flex space-x-4">
+          //     <div className="w-20 h-20 bg-gray-400 rounded-md" />
+          //     <div className="pt-2 flex flex-col space-y-1">
+          //       <h3 className="text-sm font-medium text-gray-900">
+          //         New iPhone 18
+          //       </h3>
+          //       <span className="text-xs text-gray-600">Black</span>
+          //       <span className="font-medium text-sm text-gray-900">@125</span>
+          //     </div>
+          //   </div>
+          //   <div className="flex items-end justify-end space-x-2">
+          //     <div className="flex items-center text-gray-900 space-x-1">
+          //       <svg
+          //         className="w-6 h-6 text-gray-800 dark:text-white"
+          //         aria-hidden="true"
+          //         xmlns="http://www.w3.org/2000/svg"
+          //         fill="none"
+          //         viewBox="0 0 21 19"
+          //       >
+          //         <path
+          //           stroke="currentColor"
+          //           strokeLinecap="round"
+          //           strokeLinejoin="round"
+          //           strokeWidth="2"
+          //           d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z"
+          //         />
+          //       </svg>
+          //       <span>1</span>
+          //     </div>
+          //     <div className="flex items-center text-gray-900 space-x-1">
+          //       <svg
+          //         className="w-6 h-6 text-gray-800 dark:text-white"
+          //         aria-hidden="true"
+          //         xmlns="http://www.w3.org/2000/svg"
+          //         fill="none"
+          //         viewBox="0 0 20 18"
+          //       >
+          //         <path
+          //           stroke="currentColor"
+          //           strokeLinecap="round"
+          //           strokeLinejoin="round"
+          //           strokeWidth="2"
+          //           d="M5.5 6.5h.01m4.49 0h.01m4.49 0h.01M18 1H2a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h3v5l5-5h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1Z"
+          //         />
+          //       </svg>
+          //       <span>1</span>
+          //     </div>
+          //   </div>
+        ))}
+        {/* <button className="w-10 h-10 flex items-center justify-center border bg-orange-400 shadow-sm rounded-full p-2 fixed bottom-20 right-5 hover:bg-orange-500 transition-colors cursor-pointer">
           <svg
+            className="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 18 18"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 1v16M1 9h16"
+            />
+          </svg>
+        </button> */}
+        <FloatingButton href="items/upload">
+          <svg
+            className="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
             stroke="currentColor"
-            className="file: mt-4 h-6 w-6 relative -top-2  text-white"
+            aria-hidden="true"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
             />
           </svg>
-        </div>
-        <div className="rounded-xl relative -top-4 bg-white p-6">
-          <div className="flex justify-between items-end relative -top-14">
-            <div className="flex flex-col">
-              <span className="text-slate-400 ">orders</span>
-              <span className="text-center">340</span>
-            </div>
-            <img src="" alt="" className="w-24 h-24 bg-blue-400 rounded-full" />
-            <div className="flex flex-col">
-              <span className="text-gray-400 ">Spent</span>
-              <span className="font-medium text-center">$2,310</span>
-            </div>
-          </div>
-          <div className="flex flex-col items-center -mt-12">
-            <span className="pt-2">Tony Molloy</span>
-            <span className="text-gray-500 text-sm pt-1">New York, USA</span>
-          </div>
-        </div>
+        </FloatingButton>
       </div>
-
-      <div className="bg-white p-10 rounded-xl">
-        <div>
-          <h1>Categories</h1>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <div>
-            <img src="" alt="" />
-            <h2> Chair</h2>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <h2> Table</h2>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <h2> Cupboard</h2>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <h2> Sofa</h2>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white p-10 rounded-xl">
-        <div>
-          <span>-</span>
-          <span>1</span>
-          <span>+</span>
-        </div>
-        <button>Add to cart</button>
-      </div>
-    </main>
+    </HeaderLayout>
   );
 }

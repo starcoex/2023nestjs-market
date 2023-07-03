@@ -1,3 +1,5 @@
+import Button from "@/componets/button";
+import Input from "@/componets/input";
 import classnames from "@/libs/utils";
 import React, { useState } from "react";
 
@@ -47,7 +49,7 @@ export default function Enter() {
             </button>
           </div>
         </div>
-        <form action="" className="flex flex-col mt-6">
+        {/* <form action="" className="flex flex-col mt-6">
           <label htmlFor="" className="text-sm font-medium text-gray-400 mb-2">
             {method === "email" ? "Email address" : null}
             {method === "phone" ? "Phone number" : null}
@@ -86,8 +88,25 @@ export default function Enter() {
             {method === "email" ? "Get login link" : null}
             {method === "phone" ? "Get one-time password" : null}
           </button>
+        </form> */}
+        <form className="flex flex-col mt-8 space-y-4">
+          {method === "email" ? (
+            <Input name="email" label="Email address" type="email" required />
+          ) : null}
+          {method === "phone" ? (
+            <Input
+              name="phone"
+              label="Phone number"
+              type="number"
+              kind="phone"
+              required
+            />
+          ) : null}
+          {method === "email" ? <Button text={"Get login link"} /> : null}
+          {method === "phone" ? (
+            <Button text={"Get one-time password"} />
+          ) : null}
         </form>
-
         <div className="mt-8">
           <div className="">
             <div className=" w-full border-t border-gray-200" />
