@@ -9,7 +9,7 @@ const ChatDetail: NextPage<Props> = ({}) => {
     <HeaderLayout canGoBack title="Steve">
       <div className="py-10 space-y-4 pb-16 px-4">
         <Message message="Hi how much are you selling them for?" />
-        <Message reversed message="Hi how much are you selling them for?" />
+        <Message message="Hi how much ?" reversed />
         <Message message="Hi how much are you selling them for?" />
         <form action="" className="flexd py-2 bg-white bottom-0 inset-x-0">
           <div className="flex relative max-w-md items-center w-full mx-auto">
